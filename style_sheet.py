@@ -1,5 +1,6 @@
 # style details for the helioviewer stats plots
 
+import os
 
 class hvService:
     def __init__(self, name, color, linestyle):
@@ -17,3 +18,7 @@ all_services = {"screenshot": screenshot,
                 "hv": hv,
                 "jhv": jhv,
                 "embed": embed}
+
+data_directory = os.path.expanduser('~/hv/txt/spd/')
+image_directory = os.path.expanduser('~/hv/img/spd/')
+format = 'png'
