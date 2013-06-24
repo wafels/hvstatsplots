@@ -38,3 +38,12 @@ plt.annotate(str(d.index[0].date()) + ' - '+ str(d.index[-1].date()), xy=(ann,15
 d.plot(lw=1)
 plt.savefig(''.join((img,'daily_ts','.',format)), format=format)
 
+plt.figure(3)
+f = 'Analytics www.helioviewer.org Location 20110201-20130623.csv'
+df = pandas.DataFrame.from_csv(''.join((dir, f)), header=6)
+df["Visits"].plot(kind='bar', color='red')
+plt.ylabel('Number of visits')
+plt.title('Top 10 countries/territories by number of visits')
+plt.annotate(str(df["Visits"].sum())+' visits', xy=(0.55,0.7), textcoords='figure fraction')
+plt.annotate(str(d.index[0].date()) + ' - 2013-06-24', xy=(0.55,0.75), textcoords='figure fraction')
+plt.savefig(''.join((img,'top10countries','.',format)), format=format, bbox_inches='tight')
